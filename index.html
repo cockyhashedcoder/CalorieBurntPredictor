@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calories Burnt Prediction</title>
+    <link rel="icon" type="image/icon" href="image/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">
+            <h3>Calories<span>Burnt Prediction</span></h3>
+        </div>
+        <button class="nav__toggle">&#9776;</button> 
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="data.html">Data Info</a></li>
+            <li class="link"><a href="predict.html">Prediction</a></li>
+            <li class="link"><a href="visualization.html">Visualization</a></li>
+            <li class="link"><a href="contactus.html">Contact Us</a></li>
+            <li class="link"><a href="FAQ.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Predict Your Calories Burnt</h1>
+                <p>Get an accurate estimate of the calories you burn daily based on your activity level, weight, and other factors.</p>
+                <p>Whether you're trying to lose weight, gain muscle, or maintain your current physique, understanding your calorie burn is crucial. Our advanced algorithm uses scientific data to provide you with personalized predictions.</p>
+                <a href="predict.html" class="cta-button">Get Started</a>
+                <a href="data.html" class="secondary-button">Learn More</a>
+            </div>
+            <div class="hero-image">
+                <img src="image/bg.jpeg" alt="Fitness Illustration 1" class="img1">
+                <img src="image/homepage.jpeg" alt="Fitness Illustration 2" class="img2">
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="feature">
+            <img src="image/datainfo.jpeg" alt="Data Insights">
+            <h2>Data Insights</h2>
+            <p>Explore and understand the data used for predicting calories burned. Get insights into the various features and how they impact the prediction model.</p>
+            <a href="data.html" class="feature-button">Read More</a>
+        </div>
+        <div class="feature">
+            <img src="image/predict.jpeg" alt="Predict Your Calories Burned">
+            <h2>Predict Your Calories Burned</h2>
+            <p>Predict your calorie burn by entering your health and activity data. Get accurate predictions to better manage your fitness goals. </p>
+            <a href="predict.html" class="feature-button">Get Prediction</a>
+        </div>
+        <div class="feature">
+            <img src="image/visualization.jpeg" alt="Data Visualization">
+            <h2>Data Visualization</h2>
+            <p>Explore interactive graphs to track your calorie expenditure over time. Gain insights into your activity patterns to better understand your progress and make informed fitness decisions.</p>
+            <a href="visualization.html" class="feature-button">Visualize Data</a>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section logo-section">
+                <a href="index.html">
+                <img src="image/logo.png" alt="Logo" class="footer-logo"></a>
+                <h2>Calories Burnt Prediction</h2>
+                <p>This website provides a platform for users to predict the calories burned based on various factors.</p>
+            </div>
+            <div class="footer-section quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="predict.html">Prediction</a></li>
+                    <li><a href="contactus.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-us">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> New Delhi,India</p>
+                <p><i class="fas fa-envelope"></i> abc@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+            </div>
+            <div class="footer-section stay-connected">
+                <h3>Stay Connected</h3>
+                <div class="social-icons">
+                    a href="https://x.com/_ueberrymuffin"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/anmxl2710/?__pwa=1#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/anmol-goswami-788887204/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BOoWBzRzOQ3WXHKaN0sxTMg%3D%3D"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/anmxl2710"><i class="fab fa-github"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Calories Burnt Prediction. All rights reserved.</p>
+            <p>Developed by Anmol Goswami</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.querySelector('.nav__toggle');
+            const navLinks = document.querySelector('.nav__links');
+    
+            navToggle.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    
+    
+</body>
+</html>
