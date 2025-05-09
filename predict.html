@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Calories Burnt</title>
+    <link rel="stylesheet" href="css/predict.css">
+    <link rel="icon" type="image/icon" href="image/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">
+            <h3>Calories<span>Burnt Prediction</span></h3>
+        </div>
+        <button class="nav__toggle">&#9776;</button> 
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="data.html">Data Info</a></li>
+            <li class="link"><a href="predict.html">Prediction</a></li>
+            <li class="link"><a href="visualization.html">Visualization</a></li>
+            <li class="link"><a href="contactus.html">Contact Us</a></li>
+            <li class="link"><a href="FAQ.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <header class="predict-header">
+        <h1>Predict Your Calories Burnt</h1>
+        <p>Track Your Fitness Journey with Accurate Calorie Estimates</p>
+    </header>
+    <form id="calorieForm" action="#">
+
+    <div class="container">
+        <div class="form-container">    
+            <h2>Enter Details</h2>
+            <form action="#">
+                <input type="text" id="age" name="age" placeholder="Age">
+                <input type="text" id="gender" name="gender" placeholder="Gender">
+                <input type="text" id="weight" name="weight" placeholder="Weight (kg)">
+                <input type="text" id="height" name="height" placeholder="Height (cm)">
+                <input type="text" id="duration" name="duration" placeholder="Duration (minute)">
+                <input type="text" id="heart_rate" name="heart_rate" placeholder="Heart Rate">
+                <input type="text" id="body_temp" name="body_temp" placeholder="Body Temperature (celcius)">
+                <button type="submit">Calculate</button>          
+            </form>
+            <div class="result-container" id="resultContainer">
+                <h3>Estimated Calories Burnt: <span id="caloriesResult">0</span> kcal</h3>
+            </div>
+        </div>
+        <div class="info-container">
+            <h2>Parameters</h2>
+            <ul>
+                <li><strong>Age:</strong> Metabolism slows with age, reducing the calories burned.</li>
+                <li><strong>Gender:</strong> Men generally burn more calories than women due to higher muscle mass and basal metabolic rate (BMR).</li>
+                <li><strong>Weight:</strong> Heavier people burn more calories because moving a larger body requires more energy.</li>
+                <li><strong>Height:</strong> Taller individuals may burn more calories as they usually have more muscle mass.</li>
+                <li><strong>Duration:</strong> Longer exercise sessions increase calorie expenditure.</li>
+                <li><strong>Heart Rate:</strong> Higher heart rates indicate more intense exercise, leading to more calories burned.</li>
+                <li><strong>Body Temperature:</strong> Elevated body temperature can increase metabolic rate, slightly raising calorie burn.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section logo-section">
+                <a href="index.html">
+                <img src="image/logo.png" alt="Logo" class="footer-logo"></a>
+                <h2>Calories Burnt Prediction</h2>
+                <p>This website provides a platform for users to predict the calories burned based on various factors.</p>
+            </div>
+            <div class="footer-section quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="predict.html">Prediction</a></li>
+                    <li><a href="contactus.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-us">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> New Delhi,India</p>
+                <p><i class="fas fa-envelope"></i> abc@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+            </div>
+            <div class="footer-section stay-connected">
+                <h3>Stay Connected</h3>
+                <div class="social-icons">
+                    a href="https://x.com/_ueberrymuffin"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/anmxl2710/?__pwa=1#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/anmol-goswami-788887204/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BOoWBzRzOQ3WXHKaN0sxTMg%3D%3D"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/anmxl2710"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Calories Burnt Prediction. All rights reserved.</p>
+            <p>Developed by Anmol Goswami</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.querySelector('.nav__toggle');
+            const navLinks = document.querySelector('.nav__links');
+    
+            navToggle.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+    
+            const form = document.getElementById('calorieForm');
+            const caloriesResult = document.getElementById('caloriesResult');
+            const resultContainer = document.getElementById('resultContainer');
+    
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); 
+    
+                const age = parseFloat(document.getElementById('age').value);
+                const gender = document.getElementById('gender').value.toLowerCase();
+                const weight = parseFloat(document.getElementById('weight').value);
+                const height = parseFloat(document.getElementById('height').value);
+                const duration = parseFloat(document.getElementById('duration').value);
+                const heartRate = parseFloat(document.getElementById('heart_rate').value);
+                const bodyTemp = parseFloat(document.getElementById('body_temp').value);
+    
+                if (isNaN(weight) || isNaN(duration)) {
+                    alert('Please enter valid values for weight and duration.');
+                    return;
+                }
+    
+            
+                let bmr;
+                if (gender === 'male') {
+                    bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+                } else if (gender === 'female') {
+                    bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+                } else {
+                    bmr = 0; 
+                }
+    
+                const caloriesBurned = ((bmr / 24) * (duration * 0.0175)).toFixed(2);
+    
+                caloriesResult.innerText = caloriesBurned;
+                resultContainer.style.display = 'block'; 
+            });
+        });
+    </script>
+    
+</body>
+</html>
