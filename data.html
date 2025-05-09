@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="css/data.css">
+    <link rel="icon" type="image/png" href="image/logo.png">
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">
+            <h3>Calories<span>Burnt Prediction</span></h3>
+        </div>
+        <button class="nav__toggle">&#9776;</button> 
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="data.html">Data Info</a></li>
+            <li class="link"><a href="predict.html">Prediction</a></li>
+            <li class="link"><a href="visualization.html">Visualization</a></li>
+            <li class="link"><a href="contactus.html">Contact Us</a></li>
+            <li class="link"><a href="FAQ.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <header class="Data-header">
+        <h1>Data Information</h1>
+        <p>Essential Insights for Predicting Calories Burnt Efficiently</p>
+    </header>
+    <div class="table-container">
+        <table>
+        </table>
+    </div>
+    <div class="download">
+    <a href="/csvfile/exerciseog.csv" class="download-btn" download="excercise.csv" >Download CSV</a>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section logo-section">
+                <a href="index.html">
+                <img src="image/logo.png" alt="Logo" class="footer-logo"></a>
+                <h2>Calories Burnt Prediction</h2>
+                <p>This website provides a platform for users to predict the calories burned based on various factors.</p>
+            </div>
+            <div class="footer-section quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="predict.html">Prediction</a></li>
+                    <li><a href="contactus.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-us">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+                <p><i class="fas fa-envelope"></i> abc@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+            </div>
+            <div class="footer-section stay-connected">
+                <h3>Stay Connected</h3>
+                <div class="social-icons">
+                    <a href="https://x.com/_ueberrymuffin"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/anmxl2710/?__pwa=1#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/anmol-goswami-788887204/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BOoWBzRzOQ3WXHKaN0sxTMg%3D%3D"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/anmxl2710"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Calories Burnt Prediction. All rights reserved.</p>
+            <p>Developed by Anmol Goswami</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.querySelector('.nav__toggle');
+            const navLinks = document.querySelector('.nav__links');
+    
+            navToggle.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+        });
+
+        onload = fetch("exercise.csv").then(res => {
+            return res.text();
+        }).then(data => {
+            let result = data.split(/\r?\n|\r/).map(e => {
+                return e.split(",");
+            });
+            result.forEach(e => {
+                let m = e.map(e => {
+                    return `<td>${e}</td>`;
+                }).join("");
+                let ce = document.createElement("tr");
+                ce.innerHTML = m;
+                if (ce.innerText !== "") {
+                    document.querySelector("table").appendChild(ce);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

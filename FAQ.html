@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="icon" type="image/icon" href="image/logo.png">
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">
+            <h3>Calories<span>Burnt Prediction</span></h3>
+        </div>
+        <button class="nav__toggle">&#9776;</button> 
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="data.html">Data Info</a></li>
+            <li class="link"><a href="predict.html">Prediction</a></li>
+            <li class="link"><a href="visualization.html">Visualization</a></li>
+            <li class="link"><a href="contactus.html">Contact Us</a></li>
+            <li class="link"><a href="FAQ.html">FAQ</a></li>
+        </ul>
+    </nav>
+    
+    <div class="faq-header">
+        <h1>FAQ's</h1>  
+        <h2>Any Questions?</h2>
+        <p>Some frequently asked questions... Let's answer them</p> 
+    </div>
+<div class="faq-container">
+    <div class = "faq-item">
+        <div class = "faq-question">
+            <span>What is the Project?</span>
+            <span class = "faq-icon">⬆</span>
+        </div>
+        <div class = "faq-answer">
+            <p>The project calculates the calories burned during exercises using factors like exercise type, duration, intensity, and personal metrics such as weight.</p>
+        </div>
+    </div>
+    <div class = "faq-item">
+        <div class = "faq-question">
+            <span>What is average Heart Rate?</span>
+            <span class = "faq-icon">⬆</span>
+        </div>
+        <div class = "faq-answer">
+            <p>Heart rate is the number of times your heart beats per minute, with the average resting heart rate for adults typically ranging between 60 to 100 beats per minute.</p>
+        </div>
+    </div>        
+    <div class = "faq-item">
+        <div class = "faq-question">
+            <span>Are the calorie estimates suitable for all fitness levels?</span>
+            <span class = "faq-icon">⬆</span>
+        </div>
+        <div class = "faq-answer">
+            <p>The calorie estimates provide a general guideline and are suitable for most fitness levels, but individual variations in metabolism and physical condition can affect accuracy.</p>
+        </div>
+    </div>
+    <div class = "faq-item">
+        <div class = "faq-question">
+            <span>What are the best excercise to burn the most calories?</span>
+            <span class = "faq-icon">⬆</span>
+        </div>
+        <div class = "faq-answer">
+            <p>Some of the Exercises That Burn the Most Calories :</p>
+            <p>1. Swimming</p>
+            <p>2. Running</p>
+            <p>3. Skipping</p>
+            <p>4. Weight Training</p>
+            <p>5. Cycling</p>
+            <p>6. Boxing</p>
+        </div>
+    </div>
+    <div class = "faq-item">
+        <div class = "faq-question">
+            <span>How do I lose weight using the calorie calculator?</span>
+            <span class = "faq-icon">⬆</span>
+        </div>
+        <div class = "faq-answer">
+            <p>To lose weight, you generally need to consume fewer calories than you burn. So, use the calculator to find the excercise best suited for you.</p>
+        </div>
+    </div>
+    <div class = "faq-item">
+        <div class = "faq-question">
+            <span>How do I gain weight using the calorie calculator?</span>
+            <span class = "faq-icon">⬆</span>
+        </div>
+        <div class = "faq-answer">
+            <p>To gain weight, you generally need to consume more calories than you burn. So, use the calculator to find the excercise best suited for you.</p>
+        </div>
+    </div>
+    <div class = "faq-item">
+        <div class = "faq-question">
+            <span>What units are we using?</span>
+            <span class = "faq-icon">⬆</span>
+        </div>
+        <div class = "faq-answer">
+            <p>Height : centimeter</p>
+            <p>Weight : kilograms</p>
+            <p>Body temperature : celcius</p>
+        </div>
+    </div>
+    <div class = "faq-item">
+        <div class = "faq-question">
+            <span>Is my data secure and private?</span>
+            <span class = "faq-icon">⬆</span>
+        </div>
+        <div class = "faq-answer">
+            <p>Yes, your data is secure and private; we use encryption and follow best practices to ensure that your personal information is protected and not shared with third parties.</p>
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Calories Burnt Prediction. All rights reserved.</p>
+            <p>Developed by Anmol Goswami</p>
+        </div>
+    </footer>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                faqItems.forEach(i => {
+                    if (i !== item) {
+                        i.classList.remove('active');
+                    }
+                });
+                item.classList.toggle('active');
+            });
+        });
+
+       
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.querySelector('.nav__toggle');
+            const navLinks = document.querySelector('.nav__links');
+    
+            navToggle.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+        });
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/contactus.css">
+    <link rel="icon" type="image/icon" href="image/logo.png">
+
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">
+            <h3>Calories<span>Burnt Prediction</span></h3>
+        </div>
+        <button class="nav__toggle">&#9776;</button> 
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="data.html">Data Info</a></li>
+            <li class="link"><a href="predict.html">Prediction</a></li>
+            <li class="link"><a href="visualization.html">Visualization</a></li>
+            <li class="link"><a href="contactus.html">Contact Us</a></li>
+            <li class="link"><a href="FAQ.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Contact Us</h1>
+                <p>If you have any questions or feedback, feel free to reach out to us using the form below.</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="contact-container">
+        <div class="form-container">
+            <h2>Connect with Us</h2>
+            <form action="#" method="post">
+                <input type="text" id="name" name="name" placeholder="Name" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <textarea id="message" name="message" placeholder="Message" required></textarea>
+                <button class ="hero-button" type="submit">Submit</button>
+            </form>
+            <div class="success-message" id="successMessage">
+                Submitted successfully!
+            </div>
+        
+        </div>
+        <div class="image-container">
+            <img src="image/contactus.jpg" alt="Contact Us Image">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Calories Burnt Prediction. All rights reserved.</p>
+            <p>Developed by Anmol Goswami</p>
+        </div>
+    </footer>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.querySelector('.nav__toggle');
+            const navLinks = document.querySelector('.nav__links');
+    
+            navToggle.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+        });
+
+
+    const form = document.querySelector('.form-container form');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); 
+        successMessage.style.display = 'block';
+
+        setTimeout(function () {
+            successMessage.style.display = 'none';
+        }, 3000);
+
+    });
+
+    </script>
+
+</body>
+</html>
